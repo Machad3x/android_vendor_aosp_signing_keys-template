@@ -1,9 +1,13 @@
 ```bash
-git clone https://github.com/ProjectMatrixx/android_vendor_lineage-priv_keys-template.git -b master vendor/lineage-priv/keys
+rm -rf vendor/aosp/signing/keys/BUILD
 ```
 
 ```bash
-cd vendor/lineage-priv/keys
+git clone https://github.com/Machad3x/android_vendor_aosp_signing_keys-template.git -b master vendor/aosp/signing/keys
+```
+
+```bash
+cd vendor/aosp/signing/keys
 ```
 
 ```bash

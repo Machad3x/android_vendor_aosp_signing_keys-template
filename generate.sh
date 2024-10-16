@@ -166,7 +166,7 @@ generate_certificates() {
                 size=4096
                 certificate="$certificate.certificate.override"
             fi
-            echo | bash <(sed "s/2048/$size/" ../../../development/tools/make_key) \
+            echo | bash <(sed "s/2048/$size/" ../../../../development/tools/make_key) \
                 "$certificate" \
                 "$subject"
         fi
@@ -185,7 +185,7 @@ generate_certificates() {
 create_symlinks() {
     echo "Creating system links..."
     rm -f BUILD.bazel releasekey.pk8 releasekey.x509.pem
-    ln -sf ../../../build/make/target/product/security/BUILD.bazel BUILD.bazel
+    ln -sf ../../../../build/make/target/product/security/BUILD.bazel BUILD.bazel
     ln -sf testkey.pk8 releasekey.pk8
     ln -sf testkey.x509.pem releasekey.x509.pem
 }
@@ -217,7 +217,7 @@ generate_keys_mk() {
     done
 
     echo >> keys.mk
-    echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/testkey" >> keys.mk
+    echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/aosp/signing/keys/testkey" >> keys.mk
     echo "PRODUCT_EXTRA_RECOVERY_KEYS :=" >> keys.mk
 }
 
